@@ -1,0 +1,7 @@
+# robots.txt for www.tufanirummyapp.in
+
+# Allow all user agents full access to the website
+User-agent: *
+
+# Specify the location of the sitemap
+Sitemap: https://www.tufanirummyapp.in/sitemap.xml

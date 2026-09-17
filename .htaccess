@@ -1,0 +1,14 @@
+# Force non-www to www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# Remove .html from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Prevent X-Powered-By Header
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+</IfModule>
